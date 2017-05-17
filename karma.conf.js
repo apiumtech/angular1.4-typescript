@@ -37,25 +37,7 @@ module.exports = function (config) {
         webpack: webpackConfig,
         reporters: [
             'dots',
-            'spec',
-            'coverage'
-        ],
-        coverageReporter: {
-            reporters: [
-                {
-                    dir: 'reports/coverage/',
-                    subdir: '.',
-                    type: 'html'
-                },{
-                    dir: 'reports/coverage/',
-                    subdir: '.',
-                    type: 'cobertura'
-                }, {
-                    dir: 'reports/coverage/',
-                    subdir: '.',
-                    type: 'json'
-                }
-            ]
-        }
+            'spec'
+        ]
     });
 };
