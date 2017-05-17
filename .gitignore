@@ -3,3 +3,5 @@ dist
 reports
 .idea/
 .DS_Store
+*.iml
+typings/index.d.ts
