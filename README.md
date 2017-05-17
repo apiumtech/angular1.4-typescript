@@ -3,6 +3,7 @@
 ```sh
 npm i webpack typings typescript -g
 npm install
+typings install
 ```
 ## Run
 
@@ -16,12 +17,6 @@ Then it will automatically open the app in your browser
 
 ```sh
 npm test
-```
-
-# Coverage
-
-```sh
-open reports/coverage/index.html
 ```
 
 # Build
