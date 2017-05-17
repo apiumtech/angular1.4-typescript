@@ -6,10 +6,6 @@
       "statements"],
     "ban": false,
     "class-name": true,
-    "comment-format": [true,
-      "check-space",
-      "check-lowercase"
-    ],
     "curly": true,
     "eofline": false,
     "forin": false,
@@ -62,9 +58,7 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [true, "double"],
     "radix": true,
-    "semicolon": [true, "always"],
     "switch-default": true,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true,

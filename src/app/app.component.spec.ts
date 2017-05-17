@@ -3,18 +3,27 @@
  */
 import "./index";
 import "angular-mocks";
-import {ComponentTest} from "../util/ComponentTest";
+import * as angular from "angular";
 import "phantomjs-polyfill";
-import {AppComponent} from "./app.component";
 describe("Component AppComponent", () => {
-    console.log("I'm here");
-    var directiveTest: ComponentTest<AppComponent>;
+    var $compile: any;
+    var $rootScope: any;
     beforeEach(() => {
-        directiveTest = new ComponentTest<AppComponent>("<app-component></app-component>", "pageTweets");
+        angular.module("app.application");
     });
+    beforeEach(inject(function(_$compile_: any, _$rootScope_: any): any{
+        // the injector unwraps the underscores (_) from around the parameter names when matching
+        $compile = _$compile_;
+        $rootScope = _$rootScope_;
+    }));
 
-    it("should expose the sharedModel", () => {
-        var vm: AppComponent = directiveTest.createComponent({});
-        expect(vm).toBeDefined();
+    it("Replaces the element with the appropriate content", () => {
+        // compile a piece of HTML containing the directive
+        var element: any = $compile("<app-component></app-component>")($rootScope);
+        // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
+        $rootScope.$digest();
+        console.log(element);
+        // check that the compiled element contains the templated content
+        expect(element.html()).toContain("lidless, wreathed in flame, 2 times");
     });
 });
