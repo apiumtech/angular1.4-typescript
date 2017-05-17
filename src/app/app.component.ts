@@ -25,7 +25,6 @@ export class AppComponentCtrl {
     }
 
     public DoSearch(): void {
-        console.log("AAArrrggggg");
         this.$scope.FoundResult = "Loading from controller";
     }
 }
