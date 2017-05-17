@@ -25,14 +25,7 @@ module.exports = {
   ],
   module: {
     preLoaders:preloaders,
-    loaders: loaders,
-    postLoaders: [
-      {
-        test: /^((?!\.spec\.ts).)*.ts$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'istanbul-instrumenter'
-      }
-    ]
+    loaders: loaders
   },
   tslint: {
         emitErrors: true,
